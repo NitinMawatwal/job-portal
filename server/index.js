@@ -14,9 +14,10 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // local dev
-      "https://my.netlify.app", // deployed frontend
-    ],
+  "http://localhost:5173",
+  "https://jobportalnexthire.vercel.app",
+  "https://job-portal-neatin.vercel.app",
+   ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
