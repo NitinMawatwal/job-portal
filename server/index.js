@@ -10,14 +10,12 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Use a more flexible CORS setup
+// ✅ Allow ALL origins to fix CORS issues
 app.use(
   cors({
-    origin: [
-  "http://localhost:5173",
-  "https://jobportalnexthire.vercel.app",
-  "https://job-portal-neatin.vercel.app",
-   ],
+    origin: function (origin, callback) {
+      callback(null, true);
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
